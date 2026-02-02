@@ -1,0 +1,23 @@
+# Site settings
+title: Beargineers
+baseurl: ""
+url: "https://beargineers.nl"
+
+# Team information
+team_number: "27628"
+instagram_username: beargineers_
+github_username: beargineers
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/
+  - README.md

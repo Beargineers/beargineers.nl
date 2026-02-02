@@ -1,0 +1,123 @@
+---
+---
+
+@import "minima";
+
+// Simple single page styling for Beargineers
+
+// Color scheme - matching the logo
+$team-dark: #3d4448;
+$team-light: #f5f5f5;
+
+// Center everything and create a minimal design
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+.logo-container {
+  margin-bottom: 2rem;
+
+  .logo {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: $team-dark;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.team-number {
+  font-size: 1.5rem;
+  color: #666;
+  margin: 0 0 2rem 0;
+}
+
+.social-links {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background-color: $team-dark;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: lighten($team-dark, 10%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  .instagram-link {
+    background-color: #E4405F;
+
+    &:hover {
+      background-color: darken(#E4405F, 10%);
+    }
+  }
+
+  .github-link {
+    background-color: #333;
+
+    &:hover {
+      background-color: #555;
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .team-number {
+    font-size: 1.2rem;
+  }
+
+  .logo-container .logo {
+    max-width: 280px;
+  }
+
+  .social-links .social-link {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .social-links {
+    flex-direction: column;
+  }
+}
+
+// Hide header and footer from minima theme
+.site-header,
+.site-footer {
+  display: none;
+}
