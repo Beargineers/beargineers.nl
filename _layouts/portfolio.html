@@ -1,0 +1,66 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} · {{ site.title }}</title>
+  {%- seo -%}
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body class="portfolio">
+  <header class="site-top">
+    <div class="brand">
+      <a href="{{ '/' | relative_url }}" class="logo-link">
+        <img src="{{ '/logo.png' | relative_url }}" alt="{{ site.title }} logo">
+      </a>
+      <div class="brand-text">
+        <p class="team-id">#{{ site.team_number }}</p>
+        <p class="tagline">{{ site.title }}</p>
+      </div>
+    </div>
+    <nav class="main-nav">
+      {%- assign nav_pages = site.pages | where_exp: "p","p.nav_title" | sort: "nav_order" -%}
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <ul>
+        {%- for item in nav_pages -%}
+          <li class="{% if page.url == item.url %}active{% endif %}">
+            <a href="{{ item.url | relative_url }}">{{ item.nav_title }}</a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content">
+    <div class="page-meta">
+      <p class="eyebrow">Engineering Portfolio 2025-26</p>
+      <h1>{{ page.title }}</h1>
+      {%- if page.subtitle %}<p class="subtitle">{{ page.subtitle }}</p>{% endif -%}
+    </div>
+    <article class="page-body">
+      {{ content }}
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© {{ site.time | date: '%Y' }} {{ site.title }} · FTC Team #{{ site.team_number }}</p>
+      <p class="footer-links">
+        <a href="https://www.instagram.com/beargineers_" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://github.com/beargineers" target="_blank" rel="noopener">GitHub</a>
+        <a href="{{ '/portfolio.pdf' | relative_url }}" target="_blank" rel="noopener">Download PDF</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navList = document.querySelector('.main-nav ul');
+    navToggle.addEventListener('click', () => {
+      navList.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

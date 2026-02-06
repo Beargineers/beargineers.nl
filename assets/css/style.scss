@@ -1,123 +1,268 @@
 ---
 ---
-
 @import "minima";
 
-// Simple single page styling for Beargineers
+// Dark theme with cool cyan/blue accents (distinct from orange/black schemes)
+$bg: #0a0f1a;
+$panel: #0f1524;
+$accent: #3ec7e8;
+$accent-2: #7cd2ff;
+$text: #f3f6fb;
+$muted: #9fb1c8;
+$surface: #111a2c;
+$radius: 16px;
+$shadow: 0 18px 60px rgba(0,0,0,0.35);
 
-// Color scheme - matching the logo
-$team-dark: #3d4448;
-$team-light: #f5f5f5;
+* {
+  box-sizing: border-box;
+}
 
-// Center everything and create a minimal design
-.container {
+body.portfolio {
+  font-family: "Poppins", "Segoe UI", "Inter", system-ui, -apple-system, sans-serif;
+  background: radial-gradient(80% 80% at 20% 20%, rgba(62,199,232,0.08), transparent 60%),
+              radial-gradient(60% 60% at 80% 0%, rgba(124,210,255,0.1), transparent 50%),
+              $bg;
+  color: $text;
+  margin: 0;
+  min-height: 100vh;
+}
+
+a {
+  color: $accent-2;
+  text-decoration: none;
+
+  &:hover { text-decoration: underline; }
+}
+
+.site-top {
+  position: sticky;
+  top: 0;
+  z-index: 20;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 70vh;
-  text-align: center;
-  padding: 2rem;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: rgba(10, 15, 26, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
-.logo-container {
-  margin-bottom: 2rem;
-
-  .logo {
-    max-width: 400px;
-    width: 100%;
-    height: auto;
-  }
-}
-
-h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  color: $team-dark;
-  margin: 1rem 0 0.5rem 0;
-}
-
-.team-number {
-  font-size: 1.5rem;
-  color: #666;
-  margin: 0 0 2rem 0;
-}
-
-.social-links {
-  margin-top: 2rem;
+.brand {
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
+  align-items: center;
+  gap: 12px;
 
-  .social-link {
+  img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+  }
+
+  .brand-text {
+    line-height: 1.2;
+
+    .team-id {
+      margin: 0;
+      letter-spacing: 0.04em;
+      font-weight: 800;
+      color: $accent;
+      text-transform: uppercase;
+    }
+
+    .tagline {
+      margin: 2px 0 0;
+      color: $muted;
+      font-size: 0.95rem;
+    }
+  }
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .nav-toggle {
+    display: none;
+    background: $surface;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: $text;
+    padding: 8px 10px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+  }
+
+  li a {
     display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 2rem;
-    background-color: $team-dark;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 1.2rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: transparent;
+    color: $text;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+    font-weight: 600;
+    letter-spacing: 0.01em;
 
     &:hover {
-      background-color: lighten($team-dark, 10%);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-
-    svg {
-      width: 28px;
-      height: 28px;
+      border-color: rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
     }
   }
 
-  .instagram-link {
-    background-color: #E4405F;
-
-    &:hover {
-      background-color: darken(#E4405F, 10%);
-    }
-  }
-
-  .github-link {
-    background-color: #333;
-
-    &:hover {
-      background-color: #555;
-    }
+  li.active a {
+    background: linear-gradient(135deg, $accent, $accent-2);
+    color: #0b0b0b;
+    border-color: transparent;
+    box-shadow: 0 10px 30px rgba(243,127,43,0.35);
   }
 }
 
-// Responsive design
-@media (max-width: 768px) {
+.content {
+  max-width: 1100px;
+  padding: 32px 24px 72px;
+  margin: 0 auto;
+}
+
+.page-meta {
+  margin: 32px 0 20px;
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.8rem;
+    color: $muted;
+    margin: 0 0 8px;
+  }
+
   h1 {
-    font-size: 2rem;
+    font-size: clamp(2rem, 3vw, 2.75rem);
+    margin: 0 0 12px;
+    color: #fff;
   }
 
-  .team-number {
-    font-size: 1.2rem;
-  }
-
-  .logo-container .logo {
-    max-width: 280px;
-  }
-
-  .social-links .social-link {
+  .subtitle {
+    margin: 0;
+    color: $muted;
     font-size: 1rem;
-    padding: 0.75rem 1.5rem;
-  }
-
-  .social-links {
-    flex-direction: column;
   }
 }
 
-// Hide header and footer from minima theme
-.site-header,
+.page-body {
+  background: $surface;
+  border: 1px solid rgba(255,255,255,0.07);
+  padding: 28px;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  line-height: 1.7;
+  font-size: 1rem;
+  color: #e6e6e6;
+
+  h2, h3 {
+    color: #fff;
+    margin-top: 1.8rem;
+    margin-bottom: 0.6rem;
+  }
+
+  p {
+    color: #d8d8d8;
+    margin: 0 0 1rem;
+  }
+
+  ul {
+    padding-left: 1.1rem;
+    color: #d8d8d8;
+
+    li { margin-bottom: 0.5rem; }
+  }
+
+  .pill {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(216,97,27,0.14);
+    border: 1px solid rgba(216,97,27,0.35);
+    color: #ffd7b8;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+
+  .card {
+    background: #0f1012;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 12px;
+    padding: 14px 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+
+    h3 { margin-top: 0; }
+  }
+}
+
 .site-footer {
-  display: none;
+  padding: 24px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+  background: rgba(8,8,8,0.92);
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    color: $muted;
+    font-size: 0.95rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 12px;
+
+    a { color: #f6c89f; }
+  }
+}
+
+@media (max-width: 860px) {
+  .main-nav {
+    .nav-toggle { display: inline-flex; }
+    ul {
+      position: absolute;
+      right: 16px;
+      top: 68px;
+      flex-direction: column;
+      background: $surface;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: $shadow;
+      display: none;
+      max-height: 70vh;
+      overflow: auto;
+      width: 260px;
+    }
+
+    ul.open { display: flex; }
+  }
+
+  .site-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
 }
