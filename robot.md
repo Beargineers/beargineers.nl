@@ -7,6 +7,7 @@ subtitle: Integrated design, control, and sensing stack
 ---
 
 ## Design Brainstorm {#design-brainstorm}
+![Ramp]({{ '/assets/images/ramp.jpg' | relative_url }})
 Front-mounted ramp intake concept for smooth cycles and minimal jams.
 
 - Ramp guides artifacts into short rollers so the driver can approach at angles.
@@ -14,6 +15,7 @@ Front-mounted ramp intake concept for smooth cycles and minimal jams.
 - Fast, reliable pickup with easy integration to feeder and shooter systems.
 
 ## Design Process {#design-process}
+![Iterations]({{ '/assets/images/iterations.jpg' | relative_url }})
 Scrimmage feedback led to reliability upgrades and tighter manufacturing.
 
 - Rebuilt ramp around artifact dimensions to stop bounce-outs on fast intakes.

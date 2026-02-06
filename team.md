@@ -6,6 +6,8 @@ nav_order: 2
 subtitle: Software · Hardware · Marketing · Operations · Mentors
 ---
 
+![Beargineers team]({{ '/assets/images/team.jpg' | relative_url }})
+
 ## Software
 - **Nina (Grade 12, Software Lead)** — Python, Kotlin, HTML, PHP, SQL.
 - **Yalin (Grade 10)**, **Nicolas (Grade 11)**.
