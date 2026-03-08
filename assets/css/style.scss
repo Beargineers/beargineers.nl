@@ -7,7 +7,7 @@ $bg: #cdbebc;
 $panel: #f4f1f0;
 $accent: #885750;
 $accent-2: #573b38;
-$text: #000000;
+$text: #433432;
 $muted: #644844;
 $surface: #ffffff;
 $radius: 16px;
@@ -18,7 +18,7 @@ $shadow: 0 18px 60px rgba(0,0,0,0.35);
 }
 
 body.portfolio {
-  font-family: "Bellota Text", "Muli", "Baloo 2", system-ui, -apple-system, sans-serif;
+  font-family: "Poppins", "Segoe UI", "Inter", system-ui, -apple-system, sans-serif;
   background: radial-gradient(80% 80% at 20% 20%, rgba(131,109,92,0.08), transparent 60%),
               radial-gradient(60% 60% at 80% 0%, rgba(186,125,92,0.1), transparent 50%),
               $bg;
@@ -78,7 +78,7 @@ a {
   align-items: center;
   justify-content: space-between;
   padding: 16px 24px;
-  background: rgba(179, 148, 133, 0.22);
+  background: rgba(179, 148, 133, 0.32);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
@@ -161,13 +161,13 @@ a {
 
   li.active a {
     background: linear-gradient(135deg, $accent, $accent-2);
-    color: #a1837f;
+    color: #baa4a1;
     border-color: transparent;
     box-shadow: 0 10px 30px rgba(163,136,109,0.45);
 
     &:hover,
     &:focus-visible {
-      color: #a1837f;
+      color: #baa4a1;
       background: linear-gradient(135deg, lighten($accent, 6%), lighten($accent-2, 6%));
     }
   }
@@ -211,7 +211,7 @@ a {
   box-shadow: $shadow;
   line-height: 1.7;
   font-size: 1rem;
-  color: #000;
+  color: #433432;
 
   h2, h3 {
     color: #573b38;
@@ -220,13 +220,13 @@ a {
   }
 
   p {
-    color: #000;
+    color: #433432;
     margin: 0 0 1rem;
   }
 
   ul {
     padding-left: 1.1rem;
-    color: #000;
+    color: #433432;
 
     li { margin-bottom: 0.5rem; }
   }
