@@ -38,6 +38,7 @@ For regional qualifier we decided to mostly use the same design but completely r
 
 With this robot we have won Benelux championship.
 ![Beta]({{ '/assets/images/beta.jpg' | relative_url }})
+Photo (c) 
 
 ## Gamma
 For the FIRST championship in Houston we have decided to completely re-design the robot and start from a blank page.
