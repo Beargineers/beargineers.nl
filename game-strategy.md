@@ -3,17 +3,25 @@ layout: portfolio
 title: Game Strategy
 nav_title: Strategy
 nav_order: 3
-subtitle: Maximizing game points while balancing ranking points
 ---
 
-### Ranking point trade-offs
-- **Pattern RP**: skipped spindle/indexer to keep a high throughput shooter.
-- **Movement RP**: heavy robot makes lifting slow; focus on leaving the shooting zone and fast parking instead.
-- **Ball count RP**: rely on low cycle times and scoring volume to offset indexing sacrifices.
+## Race for Throughput
+Optimize for complete feature set (scoring, pattern, parking), or focus on one particular aspect and hyper-optimize?
 
-### Flexibility
-- **Shoot from far or close**: compensate for alliance partners with limited range.
-- **Slightly slimmer than 18\"**: full park while partner partially parks for more points and RP.
-- **Defense ready**: durable structure built to handle and play defense.
+A win gives 3 RP , and completing even one additional field
+feature adds 1 more RP . That total of 4 RP is better than the 2
+RP available in a loss. Pattern sorting takes time, which
+reduces scoring throughput. A full double-parking lift also
+adds weight and consumes match time. Since scoring is the
+required base layer anyway, we concluded that Decode is a
+race for throughput.
 
-Overall approach: prioritize fast cycles and adaptable positioning to pair well with varied alliance robots.
+Compromising ranking points for game points turns out to
+actually not be a compromise. Watching top teams’
+performance as well as final RP thresholds announced for
+FIRST Championship confirmed our choice for strategy.
+Strategy Fork
+Optimize for complete feature set (scoring, pattern, parking),
+or focus on one particular aspect and hyper-optimize?
+This strategy decision drove our robot design and iteration
+process.

@@ -3,10 +3,12 @@ layout: portfolio
 title: Beargineers Team
 nav_title: Team
 nav_order: 2
-subtitle: Software · Hardware · Marketing · Operations · Mentors
 ---
 
 ![Beargineers team]({{ '/assets/images/team.JPG' | relative_url }})
+
+## Operations
+- **Yasha (Grade 11)** - supports all teams, organizes & delegates tasks. Designed the latest iteration of the robot as the Grade 12 students entered diploma exam season
 
 ## Software
 - **Nina (Grade 12, Software Lead)** — Python, Kotlin, HTML, PHP, SQL.
@@ -21,9 +23,6 @@ subtitle: Software · Hardware · Marketing · Operations · Mentors
 - **Konrad (Grade 12, Lead)** — second year as marketing lead.
 - **Tiffany (Grade 10)**, **Helena (Grade 10)**, **Freddy (Grade 12)**.
 
-## Operations
-- **Yasha (Grade 11)** — supports all teams, organizes and delegates work.
-
 ## Mentors
-- **Ford Watson** — mathematics teacher guiding problem-solving and logic.
-- **Maxim Shafirov** — software mentor for development, sensor integration, and hardware concepts.
+- **Ford Watson** — mathematics teacher at ISA, supports the team with problem-solving strategies and logical reasoning.
+- **Maxim Shafirov** — ex-CEO of JetBrains. Contributed to the creation of Android Studio and the Kotlin programming language. Supports the team in programming.

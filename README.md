@@ -48,7 +48,10 @@ beargineers.nl/
 ├── _config.yml          # Site configuration
 ├── .github/workflows/   # GitHub Actions for deployment
 ├── assets/css/          # Custom styling
-├── index.md             # Homepage (single page)
+├── assets/images/       # Pictures
+├── assets/              # Other resources like PDFs
+├── index.md             # Homepage
+├── *.md                 # Other pages
 ├── logo.png             # Team logo
 ├── Gemfile              # Ruby dependencies
 ├── CNAME                # Custom domain configuration

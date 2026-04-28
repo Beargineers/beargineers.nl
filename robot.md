@@ -3,69 +3,55 @@ layout: portfolio
 title: Robot
 nav_title: Robot
 nav_order: 4
-subtitle: Integrated design, control, and sensing stack
 ---
 
-## Design Brainstorm {#design-brainstorm}
-![Ramp]({{ '/assets/images/ramp.jpg' | relative_url }})
-Front-mounted ramp intake concept for smooth cycles and minimal jams.
+During this season we went through three complete robot
+rebuilds. Each of the rebuilds was started when we realized
+that no incremental improvements can adequately improve
+our robot’s scoring throughput.
 
-- Ramp guides artifacts into short rollers so the driver can approach at angles.
-- Gentle incline plus compression keeps artifacts controlled while entering the robot.
-- Fast, reliable pickup with easy integration to feeder and shooter systems.
+## Alpha
+Our first iteration was inspired by publicly available design by team 23070 which was a quick way to start the season, providing a bedrock to test hardware and software.
+This build was a great starting point with such a strong pros as:
+- Reliable artifact uninterrupted path
+- Separate intake and feeder motors, makes sure that artifacts will not be fired when not needed
+- Side panels made out of a strong material
+But there were also a number of cons:
+- Hand cut panels lack precision, which makes shooter shoot to the side and have more friction
+- Too much pressure on the artifact causes backspin
+- For localization, motor encoders were used, which were not precise enough
+- For pose correction, a webcam was used, which also lacked precision
+- For intake and feeder low RPM motors were used, which had unnecessary torque and not enough speed
+- Hard to change number plates which were secured with tape
+![Alpha]({{ '/assets/images/alpha.jpg' | relative_url }})
 
-## Design Process {#design-process}
-![Iterations]({{ '/assets/images/iterations.jpg' | relative_url }})
-Scrimmage feedback led to reliability upgrades and tighter manufacturing.
+## Beta
+For regional qualifier we decided to mostly use the same design but completely re-build the robot using laser-cutter for precision. There were however some important changes made:
+- ### Positioning:
+    - goBILDA Pinpoint localizer used for position tracking
+    - Limelight - used for position correction by tracking AprilTags
+- ### Intake
+    - We've designed and 3D printed a one-piece wide intake with gutters and ramp
+    - We've used faster 1100RPM motors for both intake and feeder for more reliable pickup and faster shooting sequence
+- ### Flywheel
+    - We've implemented adjustable flywheel artifact compression so we could find an optimal balance between range and backspin
 
-- Rebuilt ramp around artifact dimensions to stop bounce-outs on fast intakes.
-- Added dead-wheel odometry and a camera for automated alignment and distance-aware shooter control.
-- Enlarged intake window to contain artifacts during aggressive driving.
-- Shifted from hand-cut parts to laser-cut components for precision and strength.
+With this robot we have won Benelux championship.
+![Beta]({{ '/assets/images/beta.jpg' | relative_url }})
 
-## Chassis {#chassis}
-4-motor mecanum drivetrain prioritized alignment speed over pushing power.
+## Gamma
+For the FIRST championship in Houston we have decided to completely re-design the robot and start from a blank page.
 
-- 96mm mecanum wheels (X-pattern), 1:1 drive, tight wheelbase to cut rotational inertia.
-- Low, centered mass to reduce pitching while accelerating and shooting.
-- Strafing keeps turn corrections short; pushing power tradeoff mitigated with driver practice.
+### Sleek body design
+Makes for a robot with no wires showing, and sides without any bumps, so when the robot comes into contact with another robot or the wall, it does not stick, and instead slides. It incorporates the number plate holder with no compromise to the flatness of the body.
 
-## Intake {#intake}
-Fast ground pickup with positive control into the feeder.
+### Turret
+Allows the robot to shoot into the goal regardless of its heading. However, it complicates the design, reduces reliability, and requires a dedicated motor for turret movement.
 
-- Rubberized rollers pull artifacts via friction to avoid over-compression jams.
-- Mid-feeder wheel on a 1000 RPM motor pushes artifacts toward the shooter.
-- Tuned belt path maintains wrap and tension through the pivot arc without sharp bends.
-- 3D-printed ramp guides misaligned artifacts; tensioner tested for balanced grip and speed.
+### Single motor for intake and feeder
+As one motor is required for the turret, the feeder motor was compromised. In order for the artifacts to not go into the flywheel before shooting is required, a latch was put in place for stopping the artifact, actuated by a servo.
 
-## Shooter {#shooter}
-Tuned flywheel with adjustable pressure and fast feeding.
+### Front facing camera
+A Logitech camera in a custom Limelight-style housing makes the vision modules easily interchangeable allowing to choose the best tech for recognizing artifacts on the floor and automatically collecting them.
 
-- PIDF control (no integral) for quick target-speed convergence while targets change.
-- Distance-to-speed table (10 points) simplified into a linear formula for live adjustments.
-- Adjustable contact part balances backspin vs. bounce-outs.
-- Grippy feeder wheel on a 1000 RPM motor queues three artifacts rapidly.
-
-## Code & Automation {#code}
-Custom stack for parallel actions in auto and tele-op.
-
-- Wrote our own framework for flexibility and deeper system understanding.
-- Phase-based autonomous: main loop runs tasks in parallel (drive + flywheel tuning, etc.).
-- Robot entities store geometry/tuning; shared main code carries versions forward.
-- FollowPath PD controller accepts waypoints for smooth arrivals.
-- Tele-op buttons trigger path moves; auto-shoot when flywheel speed, heading, and position are valid.
-
-## Autonomous Strategy {#autonomous}
-Pattern-aware routines built from modular building blocks.
-
-- Preloaded artifacts stay in order; auto-shoot motif matches without opening the ramp for RP.
-- Spike pickup order favors the right spike first to hit counts divisible by three.
-- End every routine outside the shooting zone, finishing near the ramp for tele-op handoff.
-- “Autonomous maker” composes new autos from menu blocks; preset mirrored routines cover far/close shooting.
-
-## Sensors {#sensors}
-Vision, odometry, and artifact counting for consistent cycles.
-
-- Moved from webcam to **Limelight** to offload processing and improve accuracy.
-- **Gobilda PinPoint** dead wheels plus IMU give slip-proof localization when vision is unavailable.
-- Distance sensor counts artifacts entering from the ramp and halts intake after three; drivers still monitor holes in artifacts.
+![Gamma]({{ '/assets/images/gamma.jpg' | relative_url }})

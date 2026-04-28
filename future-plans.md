@@ -1,6 +1,6 @@
 ---
 layout: portfolio
-title: Future Plans (Sustainability)
+title: Future Plans
 nav_title: Future Plans
 nav_order: 16
 subtitle: Long-term growth, continuity, and inclusive recruiting
