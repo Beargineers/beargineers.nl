@@ -23,6 +23,7 @@ But there were also a number of cons:
 - For pose correction, a webcam was used, which also lacked precision
 - For intake and feeder low RPM motors were used, which had unnecessary torque and not enough speed
 - Hard to change number plates which were secured with tape
+
 ![Alpha]({{ '/assets/images/alpha.jpg' | relative_url }})
 
 ## Beta
@@ -38,7 +39,7 @@ For regional qualifier we decided to mostly use the same design but completely r
 
 With this robot we have won Benelux championship.
 ![Beta]({{ '/assets/images/beta.jpg' | relative_url }})
-Photo (c) 
+Photo (c) FTC Benelux
 
 ## Gamma
 For the FIRST championship in Houston we have decided to completely re-design the robot and start from a blank page.
