@@ -32,6 +32,6 @@ With our alliance partner Trojan robotics #24090 won all division playoff matche
 - 🏆 [Q-47](https://ftc-events.firstinspires.org/2025/NLCMPJAC1/qualifications/47) [📺 video](https://youtu.be/i3ojqygkQlI?t=15925)
 - 🏆 [M-3](https://ftc-events.firstinspires.org/2025/NLCMPJAC1/playoff/3/1) [📺 video](https://youtu.be/i3ojqygkQlI?t=21255)
 - 🏆 [M-7](https://ftc-events.firstinspires.org/2025/NLCMPJAC1/playoff/7/1) [📺 video](https://youtu.be/i3ojqygkQlI?t=22731)
-- 🏆 [M-10](https://ftc-events.firstinspires.org/2025/NLCMPJAC1/playoff/10/1) [📺 video](https://www.youtu.be/i3ojqygkQlI&t=27717)
+- 🏆 [M-10](https://ftc-events.firstinspires.org/2025/NLCMPJAC1/playoff/10/1) [📺 video](https://www.youtube.com/watch?v=i3ojqygkQlI&t=27717s)
 - 🏆 [F-1](https://ftc-events.firstinspires.org/2025/NLCMP/playoff/1/1) [📺 video](https://youtu.be/TVG3KE05RVE?t=37272)
 - 🏆 [F-2](https://ftc-events.firstinspires.org/2025/NLCMP/playoff/1/2) [📺 video](https://youtu.be/TVG3KE05RVE?t=38852)
