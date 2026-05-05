@@ -12,7 +12,7 @@ Beargineers have played 10 qualification matches in Lovelace division of the Wor
 - ❌ [Q-23 📺](https://ftc-events.firstinspires.org/2025/FTCCMP1LOVE/qualifications/23)
 - ❌ [Q-35 📺](https://ftc-events.firstinspires.org/2025/FTCCMP1LOVE/qualifications/35)
 - ❌ [Q-45 📺](https://ftc-events.firstinspires.org/2025/FTCCMP1LOVE/qualifications/45)
-- 🏆 [Q-63 📺](https://ftc-events.firstinspires.org/2025/FTCCMP1LOVE/qualifications/63)
+- 🏆 [Q-62 📺](https://ftc-events.firstinspires.org/2025/FTCCMP1LOVE/qualifications/62)
 - ❌ [Q-72 📺](https://ftc-events.firstinspires.org/2025/FTCCMP1LOVE/qualifications/72)
 - 🏆 [Q-94 📺](https://ftc-events.firstinspires.org/2025/FTCCMP1LOVE/qualifications/94)
 - 🏆 [Q-110 📺](https://ftc-events.firstinspires.org/2025/FTCCMP1LOVE/qualifications/110)
