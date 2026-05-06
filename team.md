@@ -8,7 +8,7 @@ nav_order: 2
 ![Beargineers team]({{ '/assets/images/team.JPG' | relative_url }})
 
 ## Operations
-- **Yasha (Grade 11)** - supports all teams, organizes & delegates tasks. Designed the latest iteration of the robot as the Grade 12 students entered diploma exam season
+- **Yasha (Grade 11)** — supports all teams, organizes & delegates tasks. Designed the latest iteration of the robot as the Grade 12 students entered diploma exam season
 
 ## Software
 - **Nina (Grade 12, Software Lead)** — Python, Kotlin, HTML, PHP, SQL.
@@ -17,7 +17,7 @@ nav_order: 2
 ## Hardware & Design
 - **Mirgali (Grade 12, Lead)** — mechanical and electrical focus.
 - **Josh (Grade 12, Lead)** — mechanical design and 3D design.
-- **Terentiy (Grade 12)**, **Celine (Grade 11)**, **Leo (Grade 10)**.
+- **Terentiy (Grade 12)**, **Celine (Grade 11)**.
 
 ## Marketing
 - **Konrad (Grade 12, Lead)** — second year as marketing lead.
