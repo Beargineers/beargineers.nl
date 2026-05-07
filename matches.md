@@ -20,8 +20,8 @@ Beargineers have played 10 qualification matches in Lovelace division of the Wor
 - ❌ [Q-139 📺](https://ftc-events.firstinspires.org/2025/FTCCMP1LOVE/qualifications/139)
 
 ### February 7, 2026: Benelux Championship
-Beargineers have played 8 qualification matches in Jacobs division, qualified #1
-With our alliance partner Trojan robotics #24090 won all division playoff matches, won all championship matches
+Beargineers have played 8 qualification matches in Jacobs division, qualified #1.
+Together with our alliance partner Trojan robotics #24090 won all division playoff matches, won all championship matches
 - 🏆 [Q-4](https://ftc-events.firstinspires.org/2025/NLCMPJAC1/qualifications/4) [📺 video](https://youtu.be/i3ojqygkQlI?t=1376)
 - 🏆 [Q-8](https://ftc-events.firstinspires.org/2025/NLCMPJAC1/qualifications/8) [📺 video](https://youtu.be/i3ojqygkQlI?t=2614)
 - 🏆 [Q-13](https://ftc-events.firstinspires.org/2025/NLCMPJAC1/qualifications/13) [📺 video](https://youtu.be/i3ojqygkQlI?t=5988)
