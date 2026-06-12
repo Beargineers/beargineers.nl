@@ -3,7 +3,7 @@ layout: portfolio
 title: Beargineers Team
 permalink: /team/
 nav_title: Team
-nav_order: 7
+nav_order: 8
 eyebrow: People
 ---
 

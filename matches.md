@@ -3,7 +3,7 @@ layout: portfolio
 title: Official matches
 permalink: /matches/
 nav_title: Matches
-nav_order: 8
+nav_order: 9
 eyebrow: Competition archive
 subtitle: Recordings of the matches our team played
 ---

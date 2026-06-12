@@ -354,7 +354,8 @@ a {
 
 .feature-grid,
 .listing-grid,
-.path-grid {
+.path-grid,
+.sponsor-grid {
   display: grid;
   gap: 16px;
   margin: 24px 0 32px;
@@ -365,13 +366,15 @@ a {
 }
 
 .listing-grid,
-.path-grid {
+.path-grid,
+.sponsor-grid {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
 .feature-card,
 .listing-card,
-.path-card {
+.path-card,
+.sponsor-card {
   background: $surface;
   border: 1px solid $line;
   border-radius: $radius;
@@ -428,10 +431,73 @@ a {
 }
 
 .listing-card,
-.path-card {
+.path-card,
+.sponsor-card {
   h2,
   h3 {
     margin-top: 0;
+  }
+}
+
+.sponsor-intro {
+  align-items: center;
+  background: $surface;
+  border: 1px solid $line;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  margin: 0 0 24px;
+  padding: 22px;
+
+  h2 {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    line-height: 1.08;
+    margin: 0 0 12px;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  .button-row {
+    flex: 0 0 auto;
+    margin: 0;
+  }
+}
+
+.sponsor-card {
+  min-height: 190px;
+
+  h2 {
+    color: #573b38;
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+}
+
+.sponsor-logo {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid $line;
+  border-radius: $radius;
+  display: flex;
+  height: 112px;
+  justify-content: center;
+  margin: 0 0 18px;
+  padding: 18px;
+
+  &:hover,
+  &:focus-visible {
+    border-color: $accent-2;
+  }
+
+  img {
+    display: block;
+    max-height: 72px;
+    max-width: 100%;
+    object-fit: contain;
   }
 }
 
@@ -574,5 +640,14 @@ a {
 
   .hero-panel {
     padding: 18px;
+  }
+
+  .sponsor-intro {
+    align-items: flex-start;
+    flex-direction: column;
+
+    .button-row {
+      width: 100%;
+    }
   }
 }
