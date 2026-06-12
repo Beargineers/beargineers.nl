@@ -5,6 +5,60 @@ url: "https://beargineers.nl"
 
 # Team information
 team_number: "27628"
+description: "FTC Team #27628 at the International School of Amsterdam: team archive, match records, and engineering portfolios."
+
+collections:
+  resources:
+    output: true
+    permalink: /learn/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
+  cad:
+    output: true
+    permalink: /cad/:path/
+  portfolios:
+    output: true
+    permalink: /portfolio/:path/
+  matches:
+    output: true
+    permalink: /matches/:path/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: portfolio
+  - scope:
+      path: ""
+      type: resources
+    values:
+      layout: portfolio
+      eyebrow: Learning resource
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: portfolio
+      eyebrow: Open source project
+  - scope:
+      path: ""
+      type: cad
+    values:
+      layout: portfolio
+      eyebrow: CAD drop
+  - scope:
+      path: ""
+      type: portfolios
+    values:
+      layout: portfolio
+      eyebrow: Engineering portfolio
+  - scope:
+      path: ""
+      type: matches
+    values:
+      layout: portfolio
+      eyebrow: Match archive
 
 # Build settings
 markdown: kramdown

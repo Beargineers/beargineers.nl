@@ -1,8 +1,8 @@
 ---
 layout: portfolio
 title: "Marketing & Outreach"
-nav_title: Outreach
-nav_order: 13
+permalink: /portfolio-archive/2025-26/decode/outreach/
+eyebrow: DECODE portfolio archive
 ---
 ## School lobby demonstration
 To reach students who would not

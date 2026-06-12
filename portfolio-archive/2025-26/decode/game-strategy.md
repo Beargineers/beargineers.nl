@@ -1,8 +1,8 @@
 ---
 layout: portfolio
 title: Game Strategy
-nav_title: Strategy
-nav_order: 3
+permalink: /portfolio-archive/2025-26/decode/game-strategy/
+eyebrow: DECODE portfolio archive
 ---
 
 ## Race for Throughput

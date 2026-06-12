@@ -1,37 +1,65 @@
 ---
 layout: portfolio
 title: Official matches
+permalink: /matches/
 nav_title: Matches
-nav_order: 17
+nav_order: 8
+eyebrow: Competition archive
 subtitle: Recordings of the matches our team played
 ---
 
-### Apr 30 - May 2 2026: FIRST Championship Houston, TX
-Beargineers have played 10 qualification matches in Lovelace division of the World Finals (won 3, lost 7):
-- ❌ [Q-10 📺](https://ftc-events.firstinspires.org/2025/FTCCMP1LOVE/qualifications/10)
-- ❌ [Q-23 📺](https://ftc-events.firstinspires.org/2025/FTCCMP1LOVE/qualifications/23)
-- ❌ [Q-35 📺](https://ftc-events.firstinspires.org/2025/FTCCMP1LOVE/qualifications/35)
-- ❌ [Q-45 📺](https://ftc-events.firstinspires.org/2025/FTCCMP1LOVE/qualifications/45)
-- 🏆 [Q-62 📺](https://ftc-events.firstinspires.org/2025/FTCCMP1LOVE/qualifications/62)
-- ❌ [Q-72 📺](https://ftc-events.firstinspires.org/2025/FTCCMP1LOVE/qualifications/72)
-- 🏆 [Q-94 📺](https://ftc-events.firstinspires.org/2025/FTCCMP1LOVE/qualifications/94)
-- 🏆 [Q-110 📺](https://ftc-events.firstinspires.org/2025/FTCCMP1LOVE/qualifications/110)
-- ❌ [Q-119 📺](https://ftc-events.firstinspires.org/2025/FTCCMP1LOVE/qualifications/119)
-- ❌ [Q-139 📺](https://ftc-events.firstinspires.org/2025/FTCCMP1LOVE/qualifications/139)
+Match archives are organized by season, then by event. Each event card includes official FIRST links, video timestamps, qualification results, playoff results, and short notes about what the team learned.
 
-### February 7, 2026: Benelux Championship
-Beargineers have played 8 qualification matches in Jacobs division, qualified #1.
-Together with our alliance partner Trojan robotics #24090 won all division playoff matches, won all championship matches
-- 🏆 [Q-4](https://ftc-events.firstinspires.org/2025/NLCMPJAC1/qualifications/4) [📺 video](https://youtu.be/i3ojqygkQlI?t=1376)
-- 🏆 [Q-8](https://ftc-events.firstinspires.org/2025/NLCMPJAC1/qualifications/8) [📺 video](https://youtu.be/i3ojqygkQlI?t=2614)
-- 🏆 [Q-13](https://ftc-events.firstinspires.org/2025/NLCMPJAC1/qualifications/13) [📺 video](https://youtu.be/i3ojqygkQlI?t=5988)
-- 🏆 [Q-19](https://ftc-events.firstinspires.org/2025/NLCMPJAC1/qualifications/19) [📺 video](https://youtu.be/i3ojqygkQlI?t=7754)
-- 🏆 [Q-29](https://ftc-events.firstinspires.org/2025/NLCMPJAC1/qualifications/29) [📺 video](https://youtu.be/i3ojqygkQlI?t=10745)
-- 🏆 [Q-36](https://ftc-events.firstinspires.org/2025/NLCMPJAC1/qualifications/36) [📺 video](https://youtu.be/i3ojqygkQlI?t=12765)
-- 🏆 [Q-41](https://ftc-events.firstinspires.org/2025/NLCMPJAC1/qualifications/41) [📺 video](https://youtu.be/i3ojqygkQlI?t=14195)
-- 🏆 [Q-47](https://ftc-events.firstinspires.org/2025/NLCMPJAC1/qualifications/47) [📺 video](https://youtu.be/i3ojqygkQlI?t=15925)
-- 🏆 [M-3](https://ftc-events.firstinspires.org/2025/NLCMPJAC1/playoff/3/1) [📺 video](https://youtu.be/i3ojqygkQlI?t=21255)
-- 🏆 [M-7](https://ftc-events.firstinspires.org/2025/NLCMPJAC1/playoff/7/1) [📺 video](https://youtu.be/i3ojqygkQlI?t=22731)
-- 🏆 [M-10](https://ftc-events.firstinspires.org/2025/NLCMPJAC1/playoff/10/1) [📺 video](https://www.youtube.com/watch?v=i3ojqygkQlI&t=27717s)
-- 🏆 [F-1](https://ftc-events.firstinspires.org/2025/NLCMP/playoff/1/1) [📺 video](https://youtu.be/TVG3KE05RVE?t=37272)
-- 🏆 [F-2](https://ftc-events.firstinspires.org/2025/NLCMP/playoff/1/2) [📺 video](https://youtu.be/TVG3KE05RVE?t=38852)
+{% assign seasons = site.matches | group_by: "season" | sort: "name" | reverse %}
+{% for season in seasons %}
+  {% assign events = season.items | sort: "order" %}
+  {% assign games = events | map: "game" | uniq | join: ", " %}
+  {% assign total_matches = 0 %}
+  {% for event in events %}
+    {% assign total_matches = total_matches | plus: event.matches_count %}
+  {% endfor %}
+
+<section class="season-section" id="season-{{ season.name | slugify }}">
+  <div class="season-heading">
+    <p class="section-kicker">{{ games }}</p>
+    <h2>{{ season.name }}</h2>
+    <p>{{ events.size }} events · {{ total_matches }} matches</p>
+  </div>
+
+  <div class="listing-grid">
+  {% for item in events %}
+    <article class="listing-card">
+      <p class="card-meta">{{ item.event_date }}{% if item.location %} · {{ item.location }}{% endif %}</p>
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.summary }}</p>
+      <p class="tag-row">
+        {% if item.event_type %}<span>{{ item.event_type }}</span>{% endif %}
+        {% if item.division %}<span>{{ item.division }} division</span>{% endif %}
+        {% if item.record %}<span>{{ item.record }}</span>{% endif %}
+        {% if item.matches_count %}<span>{{ item.matches_count }} matches</span>{% endif %}
+      </p>
+      {% if item.match_sections %}
+      <div class="match-sections">
+        {% for section in item.match_sections %}
+        <section class="match-section">
+          <h4>{{ section.title }}</h4>
+          <ul class="match-list">
+            {% for match in section.matches %}
+            <li class="{{ match.result }}">
+              <span class="match-result">{% if match.result == "win" %}🏆{% else %}❌{% endif %}</span>
+              <a href="{{ match.official_url }}" target="_blank" rel="noopener">{{ match.label }}</a>
+              {% if match.video_url %}
+              <a class="video-link" href="{{ match.video_url }}" target="_blank" rel="noopener">video</a>
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+        </section>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </article>
+  {% endfor %}
+  </div>
+</section>
+{% endfor %}

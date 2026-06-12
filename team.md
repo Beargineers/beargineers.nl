@@ -1,8 +1,10 @@
 ---
 layout: portfolio
 title: Beargineers Team
+permalink: /team/
 nav_title: Team
-nav_order: 2
+nav_order: 7
+eyebrow: People
 ---
 
 ![Beargineers team]({{ '/assets/images/team.JPG' | relative_url }})

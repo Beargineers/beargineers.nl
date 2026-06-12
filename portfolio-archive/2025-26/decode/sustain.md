@@ -1,8 +1,8 @@
 ---
 layout: portfolio
 title: Sustainability
-nav_title: Sustain
-nav_order: 14
+permalink: /portfolio-archive/2025-26/decode/sustain/
+eyebrow: DECODE portfolio archive
 ---
 
 Our goal is to ensure that our engineering club remains sustainable, inclusive, and

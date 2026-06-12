@@ -1,8 +1,8 @@
 ---
 layout: portfolio
 title: Software & Control
-nav_title: Software
-nav_order: 5
+permalink: /portfolio-archive/2025-26/decode/software/
+eyebrow: DECODE portfolio archive
 ---
 
 For AUTO, optimizing throughput required:

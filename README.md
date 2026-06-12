@@ -1,10 +1,18 @@
 # Beargineers FTC Team #27628 Website
 
-A minimal, single-page website for the Beargineers FIRST Tech Challenge robotics team. Built with Jekyll and hosted on GitHub Pages.
+A Jekyll website for the Beargineers FIRST Tech Challenge robotics team. It combines team identity, learning resources, open engineering projects, CAD downloads, blog posts, match records, and downloadable engineering portfolios.
 
 ## About
 
-This is a simple landing page featuring our team logo and links to our social media presence.
+This site is intended to be useful beyond a season portfolio. The current structure is:
+
+- `learn/`: curated FTC learning resources
+- `projects/`: open-source software and engineering projects
+- `cad/`: reusable CAD drops and design notes
+- `blog/`: team stories, build logs, and competition notes
+- `portfolio/`: downloadable engineering portfolio PDFs and supporting pages
+- `matches/`: one-page season and event-organized match archive
+- `team/`: team information
 
 ## Local Development
 
@@ -47,12 +55,19 @@ This is a simple landing page featuring our team logo and links to our social me
 beargineers.nl/
 ├── _config.yml          # Site configuration
 ├── .github/workflows/   # GitHub Actions for deployment
+├── _cad/                # CAD drops and design notes
+├── _layouts/            # Jekyll layouts
+├── _matches/            # Event match archives, organized by season folder
+├── _portfolios/         # Engineering portfolio entries
+├── _posts/              # Blog posts
+├── _projects/           # Open-source project pages
+├── _resources/          # Learning resource pages
 ├── assets/css/          # Custom styling
 ├── assets/images/       # Pictures
 ├── assets/              # Other resources like PDFs
+├── portfolio-archive/   # Legacy portfolio-derived support pages by season/game
 ├── index.md             # Homepage
-├── *.md                 # Other pages
-├── logo.png             # Team logo
+├── *.md                 # Top-level landing and archive pages
 ├── Gemfile              # Ruby dependencies
 ├── CNAME                # Custom domain configuration
 └── README.md            # This file
@@ -83,9 +98,14 @@ bundle exec jekyll serve
 Then view at `http://localhost:4000`
 
 Common tasks:
-- **Update logo**: Replace `logo.png`
+- **Update logo**: Replace `assets/images/logo.png`
 - **Modify styling**: Edit `assets/css/style.scss`
-- **Update content**: Edit `index.md`
+- **Update homepage**: Edit `index.md`
+- **Add learning material**: Add a Markdown file in `_resources/`
+- **Add project page**: Add a Markdown file in `_projects/`
+- **Add CAD drop**: Add a Markdown file in `_cad/`
+- **Add blog post**: Add a dated Markdown file in `_posts/`
+- **Add match event**: Add a Markdown file in `_matches/<season>/`
 - **Update social links**: Edit `_config.yml`
 
 ### 4. Push Your Changes
@@ -130,10 +150,7 @@ Edit `assets/css/style.scss` to customize:
 
 ### Add Content
 
-To expand beyond a single page, you can:
-1. Create new `.md` files in the root directory
-2. Add links in `index.md`
-3. Update navigation in `_config.yml` if using a theme with navigation
+To add a new top-level page, create a `.md` file in the root directory and include `nav_title` plus `nav_order` in the front matter when it should appear in the main navigation.
 
 ## Ruby 4.0+ Compatibility
 

@@ -1,8 +1,8 @@
 ---
 layout: portfolio
 title: Robot
-nav_title: Robot
-nav_order: 4
+permalink: /portfolio-archive/2025-26/decode/robot/
+eyebrow: DECODE portfolio archive
 ---
 
 During this season we went through three complete robot
