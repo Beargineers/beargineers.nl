@@ -74,7 +74,7 @@ without having to actually drive a robot.
 Last but not least, visually identify an artifact using a webcam and drive directly towards
 it and automatically collect.
 
-![Controls]({{ '/assets/images/controls.jpg' | relative_url }})
+![Controls]({{ '/assets/images/controls.webp' | relative_url }})
 
 Solving those during teleop required a software system capable of
 dynamically adjusting to an environment rather than just following an

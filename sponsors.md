@@ -22,7 +22,7 @@ subtitle: Organizations helping Beargineers build, compete, document, and teach.
   <article class="sponsor-card">
     <p class="card-meta">School sponsor</p>
     <a class="sponsor-logo" href="https://www.isa.nl/" target="_blank" rel="noopener">
-      <img src="{{ '/assets/images/sponsors/isa-logo.png' | relative_url }}" alt="International School of Amsterdam logo">
+      <img src="{{ '/assets/images/sponsors/isa-logo.webp' | relative_url }}" alt="International School of Amsterdam logo">
     </a>
     <p>Most importantly ISA provides the community and learning environment that make Beargineers possible. Our school also provides certain budget that contributes to cover season registration fees, event registration fees, robot and practicing field expenses.</p>
   </article>

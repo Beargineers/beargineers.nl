@@ -17,7 +17,7 @@ subtitle: FTC team archive, match records, and season portfolio downloads.
       <a class="button" href="{{ '/matches/' | relative_url }}">Match archive</a>
     </p>
   </div>
-  <img src="{{ '/assets/images/gamma.jpg' | relative_url }}" alt="Beargineers Gamma robot">
+  <img src="{{ '/assets/images/gamma.webp' | relative_url }}" alt="Beargineers Gamma robot">
 </section>
 
 {% assign learn_page = site.pages | where: "url", "/learn/" | first %}

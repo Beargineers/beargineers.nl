@@ -47,7 +47,7 @@ This site is intended to be useful beyond a season portfolio. The current struct
 
 - Changes to most files will automatically rebuild the site
 - Changes to `_config.yml` require restarting the server
-- The logo file is `logo.png` in the root directory
+- The logo file is `assets/images/logo.svg`
 
 ## Project Structure
 
@@ -98,7 +98,7 @@ bundle exec jekyll serve
 Then view at `http://localhost:4000`
 
 Common tasks:
-- **Update logo**: Replace `assets/images/logo.png`
+- **Update logo**: Replace `assets/images/logo.svg`
 - **Modify styling**: Edit `assets/css/style.scss`
 - **Update homepage**: Edit `index.md`
 - **Add learning material**: Add a Markdown file in `_resources/`
@@ -138,7 +138,7 @@ github_username: beargineers
 
 ### Replace Logo
 
-Simply replace `logo.png` with your updated logo (PNG format recommended).
+Replace `assets/images/logo.svg` with an updated SVG logo. Use WebP for large photographic assets.
 
 ### Modify Styling
 

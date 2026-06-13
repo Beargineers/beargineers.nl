@@ -24,7 +24,7 @@ But there were also a number of cons:
 - For intake and feeder low RPM motors were used, which had unnecessary torque and not enough speed
 - Hard to change number plates which were secured with tape
 
-![Alpha]({{ '/assets/images/alpha.jpg' | relative_url }})
+![Alpha]({{ '/assets/images/alpha.webp' | relative_url }})
 
 ## Beta
 For regional qualifier we decided to mostly use the same design but completely re-build the robot using laser-cutter for precision. There were however some important changes made:
@@ -38,7 +38,7 @@ For regional qualifier we decided to mostly use the same design but completely r
     - We've implemented adjustable flywheel artifact compression so we could find an optimal balance between range and backspin
 
 With this robot we have won Benelux championship.
-![Beta]({{ '/assets/images/beta.jpg' | relative_url }})
+![Beta]({{ '/assets/images/beta.webp' | relative_url }})
 Photo (c) FTC Benelux
 
 ## Gamma
@@ -56,4 +56,4 @@ As one motor is required for the turret, the feeder motor was compromised. In or
 ### Front facing camera
 A Logitech camera in a custom Limelight-style housing makes the vision modules easily interchangeable allowing to choose the best tech for recognizing artifacts on the floor and automatically collecting them.
 
-![Gamma]({{ '/assets/images/gamma.jpg' | relative_url }})
+![Gamma]({{ '/assets/images/gamma.webp' | relative_url }})

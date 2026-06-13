@@ -7,7 +7,7 @@ nav_order: 8
 eyebrow: People
 ---
 
-![Beargineers team]({{ '/assets/images/team.JPG' | relative_url }})
+![Beargineers team]({{ '/assets/images/team.webp' | relative_url }})
 
 ## Operations
 - **Yasha (Grade 11)** — supports all teams, organizes & delegates tasks. Designed the latest iteration of the robot as the Grade 12 students entered diploma exam season
