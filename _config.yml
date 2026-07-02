@@ -33,7 +33,7 @@ defaults:
       path: ""
       type: resources
     values:
-      layout: portfolio
+      layout: docs
       eyebrow: Learning resource
   - scope:
       path: ""

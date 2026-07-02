@@ -1,12 +1,7 @@
 ---
 title: Fusion 360 for FTC
-area: cad
-level: beginner
-order: 30
-featured: true
 published: false
 summary: A structured path for learning sketches, constraints, assemblies, vendor parts, and robot-ready manufacturing.
-tags: [fusion-360, cad, design]
 ---
 
 Fusion 360 is most useful for FTC when it helps the team make decisions before cutting material.

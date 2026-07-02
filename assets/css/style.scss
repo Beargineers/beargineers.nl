@@ -580,6 +580,139 @@ a {
   padding: 6px 0 6px 14px;
 }
 
+.docs-page {
+  padding: 20px 24px 64px;
+}
+
+.docs-layout {
+  align-items: start;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 230px minmax(0, 1fr);
+  margin: 0 auto;
+  max-width: 1480px;
+}
+
+.docs-sidebar {
+  border-right: 1px solid $line;
+  max-height: calc(100vh - 96px);
+  overflow: auto;
+  padding: 8px 18px 24px 0;
+  position: sticky;
+  top: 84px;
+}
+
+.docs-nav-home {
+  border-bottom: 1px solid $line;
+  color: $text !important;
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 800;
+  margin-bottom: 14px;
+  padding: 0 0 12px;
+  text-decoration: none !important;
+
+  &:hover,
+  &:focus-visible,
+  &.is-active {
+    color: $accent-2 !important;
+  }
+}
+
+.docs-nav-list {
+  display: grid;
+  gap: 2px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin: 0 !important;
+  }
+
+  .docs-nav-list {
+    border-left: 1px solid $line;
+    margin: 2px 0 6px 9px;
+    padding-left: 9px;
+  }
+}
+
+.docs-folder-link,
+.docs-article-link {
+  border-left: 3px solid transparent;
+  color: $text !important;
+  display: block;
+  font-size: 0.92rem;
+  line-height: 1.35;
+  padding: 5px 8px;
+  text-decoration: none !important;
+
+  &:hover,
+  &:focus-visible {
+    color: $accent-2 !important;
+  }
+}
+
+.docs-folder-link {
+  color: #573b38 !important;
+  font-weight: 800;
+}
+
+.docs-article-link {
+  color: $muted !important;
+
+  &.is-active {
+    border-left-color: $accent-2;
+    color: $accent-2 !important;
+    font-weight: 800;
+  }
+}
+
+.docs-folder.is-current > .docs-folder-link {
+  color: $accent-2 !important;
+}
+
+.docs-content {
+  line-height: 1.72;
+  min-width: 0;
+  max-width: 980px;
+  padding: 4px 0 36px;
+
+  h2,
+  h3 {
+    color: $text;
+    margin-top: 1.7rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin: 0 0 1rem;
+  }
+
+  ul {
+    padding-left: 1.15rem;
+  }
+}
+
+.docs-content-header {
+  border-bottom: 1px solid $line;
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+
+  h1 {
+    color: #573b38;
+    font-size: clamp(1.9rem, 3vw, 2.7rem);
+    line-height: 1.08;
+    margin: 0 0 8px;
+  }
+
+  p {
+    color: $muted;
+    font-size: 1rem;
+    margin: 0;
+  }
+}
+
 .site-footer {
   padding: 24px;
   border-top: 1px solid $line;
@@ -634,12 +767,29 @@ a {
   }
 
   .hero-panel,
-  .feature-grid {
+  .feature-grid,
+  .docs-layout {
     grid-template-columns: 1fr;
   }
 
   .hero-panel {
     padding: 18px;
+  }
+
+  .docs-page {
+    padding: 16px;
+  }
+
+  .docs-sidebar {
+    border-bottom: 1px solid $line;
+    border-right: 0;
+    max-height: none;
+    padding: 0 0 14px;
+    position: static;
+  }
+
+  .docs-content {
+    max-width: none;
   }
 
   .sponsor-intro {

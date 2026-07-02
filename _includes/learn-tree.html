@@ -1,0 +1,182 @@
+{% assign docs = site.resources | where_exp: "item", "item.published != false" | sort: "path" %}
+{% assign active_path = "" %}
+{% if page.collection == "resources" %}
+  {% assign active_path = page.path | remove_first: "_resources/" %}
+{% endif %}
+
+<aside class="docs-sidebar" aria-label="Learn navigation">
+  <nav class="docs-nav">
+    <a class="docs-nav-home{% if page.url == '/learn/' %} is-active{% endif %}" href="{{ '/learn/' | relative_url }}">Learn home</a>
+    <ol class="docs-nav-list docs-nav-root">
+      {% for doc1 in docs %}
+        {% assign path1 = doc1.path | remove_first: "_resources/" %}
+        {% assign parts1 = path1 | split: "/" %}
+        {% if parts1.size > 1 %}
+          {% assign folder1 = parts1[0] %}
+          {% capture prefix1 %}{{ folder1 }}/{% endcapture %}
+          {% assign prefix1_size = prefix1 | size %}
+          {% assign first1_url = "" %}
+          {% for candidate1 in docs %}
+            {% assign candidate1_path = candidate1.path | remove_first: "_resources/" %}
+            {% assign candidate1_start = candidate1_path | slice: 0, prefix1_size %}
+            {% if candidate1_start == prefix1 %}
+              {% assign first1_url = candidate1.url %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+          {% if doc1.url == first1_url %}
+            {% capture index1_path %}{{ prefix1 }}index.md{% endcapture %}
+            {% assign folder1_url = first1_url %}
+            {% for candidate1 in docs %}
+              {% assign candidate1_path = candidate1.path | remove_first: "_resources/" %}
+              {% if candidate1_path == index1_path %}
+                {% assign folder1_url = candidate1.url %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+            {% assign active1_start = active_path | slice: 0, prefix1_size %}
+            {% assign folder1_title = folder1 | replace: "-", " " %}
+            {% if folder1_title == "cad" %}
+              {% assign folder1_title = "CAD" %}
+            {% else %}
+              {% assign folder1_title = folder1_title | capitalize %}
+            {% endif %}
+            <li class="docs-folder docs-depth-0{% if active1_start == prefix1 %} is-current{% endif %}">
+              <a class="docs-folder-link" href="{{ folder1_url | relative_url }}">{{ folder1_title }}</a>
+              <ol class="docs-nav-list">
+                {% for doc2 in docs %}
+                  {% assign path2 = doc2.path | remove_first: "_resources/" %}
+                  {% assign start2 = path2 | slice: 0, prefix1_size %}
+                  {% if start2 == prefix1 %}
+                    {% assign remaining2 = path2 | slice: prefix1_size, path2.size %}
+                    {% assign parts2 = remaining2 | split: "/" %}
+                    {% if parts2.size > 1 %}
+                      {% assign folder2 = parts2[0] %}
+                      {% capture prefix2 %}{{ prefix1 }}{{ folder2 }}/{% endcapture %}
+                      {% assign prefix2_size = prefix2 | size %}
+                      {% assign first2_url = "" %}
+                      {% for candidate2 in docs %}
+                        {% assign candidate2_path = candidate2.path | remove_first: "_resources/" %}
+                        {% assign candidate2_start = candidate2_path | slice: 0, prefix2_size %}
+                        {% if candidate2_start == prefix2 %}
+                          {% assign first2_url = candidate2.url %}
+                          {% break %}
+                        {% endif %}
+                      {% endfor %}
+                      {% if doc2.url == first2_url %}
+                        {% capture index2_path %}{{ prefix2 }}index.md{% endcapture %}
+                        {% assign folder2_url = first2_url %}
+                        {% for candidate2 in docs %}
+                          {% assign candidate2_path = candidate2.path | remove_first: "_resources/" %}
+                          {% if candidate2_path == index2_path %}
+                            {% assign folder2_url = candidate2.url %}
+                            {% break %}
+                          {% endif %}
+                        {% endfor %}
+                        {% assign active2_start = active_path | slice: 0, prefix2_size %}
+                        {% assign folder2_title = folder2 | replace: "-", " " | capitalize %}
+                        <li class="docs-folder docs-depth-1{% if active2_start == prefix2 %} is-current{% endif %}">
+                          <a class="docs-folder-link" href="{{ folder2_url | relative_url }}">{{ folder2_title }}</a>
+                          <ol class="docs-nav-list">
+                            {% for doc3 in docs %}
+                              {% assign path3 = doc3.path | remove_first: "_resources/" %}
+                              {% assign start3 = path3 | slice: 0, prefix2_size %}
+                              {% if start3 == prefix2 %}
+                                {% assign remaining3 = path3 | slice: prefix2_size, path3.size %}
+                                {% assign parts3 = remaining3 | split: "/" %}
+                                {% if parts3.size > 1 %}
+                                  {% assign folder3 = parts3[0] %}
+                                  {% capture prefix3 %}{{ prefix2 }}{{ folder3 }}/{% endcapture %}
+                                  {% assign prefix3_size = prefix3 | size %}
+                                  {% assign first3_url = "" %}
+                                  {% for candidate3 in docs %}
+                                    {% assign candidate3_path = candidate3.path | remove_first: "_resources/" %}
+                                    {% assign candidate3_start = candidate3_path | slice: 0, prefix3_size %}
+                                    {% if candidate3_start == prefix3 %}
+                                      {% assign first3_url = candidate3.url %}
+                                      {% break %}
+                                    {% endif %}
+                                  {% endfor %}
+                                  {% if doc3.url == first3_url %}
+                                    {% capture index3_path %}{{ prefix3 }}index.md{% endcapture %}
+                                    {% assign folder3_url = first3_url %}
+                                    {% for candidate3 in docs %}
+                                      {% assign candidate3_path = candidate3.path | remove_first: "_resources/" %}
+                                      {% if candidate3_path == index3_path %}
+                                        {% assign folder3_url = candidate3.url %}
+                                        {% break %}
+                                      {% endif %}
+                                    {% endfor %}
+                                    {% assign active3_start = active_path | slice: 0, prefix3_size %}
+                                    {% assign folder3_title = folder3 | replace: "-", " " | capitalize %}
+                                    <li class="docs-folder docs-depth-2{% if active3_start == prefix3 %} is-current{% endif %}">
+                                      <a class="docs-folder-link" href="{{ folder3_url | relative_url }}">{{ folder3_title }}</a>
+                                      <ol class="docs-nav-list">
+                                        {% for doc4 in docs %}
+                                          {% assign path4 = doc4.path | remove_first: "_resources/" %}
+                                          {% assign start4 = path4 | slice: 0, prefix3_size %}
+                                          {% if start4 == prefix3 %}
+                                            {% assign remaining4 = path4 | slice: prefix3_size, path4.size %}
+                                            {% assign parts4 = remaining4 | split: "/" %}
+                                            {% if parts4.size == 1 and parts4[0] != "index.md" %}
+                                              <li class="docs-article docs-depth-3">
+                                                <a class="docs-article-link{% if page.url == doc4.url %} is-active{% endif %}" href="{{ doc4.url | relative_url }}">{{ doc4.title }}</a>
+                                              </li>
+                                            {% endif %}
+                                          {% endif %}
+                                        {% endfor %}
+                                      </ol>
+                                    </li>
+                                  {% endif %}
+                                {% endif %}
+                              {% endif %}
+                            {% endfor %}
+                            {% for doc3 in docs %}
+                              {% assign path3 = doc3.path | remove_first: "_resources/" %}
+                              {% assign start3 = path3 | slice: 0, prefix2_size %}
+                              {% if start3 == prefix2 %}
+                                {% assign remaining3 = path3 | slice: prefix2_size, path3.size %}
+                                {% assign parts3 = remaining3 | split: "/" %}
+                                {% if parts3.size == 1 and parts3[0] != "index.md" %}
+                                  <li class="docs-article docs-depth-2">
+                                    <a class="docs-article-link{% if page.url == doc3.url %} is-active{% endif %}" href="{{ doc3.url | relative_url }}">{{ doc3.title }}</a>
+                                  </li>
+                                {% endif %}
+                              {% endif %}
+                            {% endfor %}
+                          </ol>
+                        </li>
+                      {% endif %}
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+                {% for doc2 in docs %}
+                  {% assign path2 = doc2.path | remove_first: "_resources/" %}
+                  {% assign start2 = path2 | slice: 0, prefix1_size %}
+                  {% if start2 == prefix1 %}
+                    {% assign remaining2 = path2 | slice: prefix1_size, path2.size %}
+                    {% assign parts2 = remaining2 | split: "/" %}
+                    {% if parts2.size == 1 and parts2[0] != "index.md" %}
+                      <li class="docs-article docs-depth-1">
+                        <a class="docs-article-link{% if page.url == doc2.url %} is-active{% endif %}" href="{{ doc2.url | relative_url }}">{{ doc2.title }}</a>
+                      </li>
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+              </ol>
+            </li>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+      {% for doc1 in docs %}
+        {% assign path1 = doc1.path | remove_first: "_resources/" %}
+        {% assign parts1 = path1 | split: "/" %}
+        {% if parts1.size == 1 and parts1[0] != "index.md" %}
+          <li class="docs-article docs-depth-0">
+            <a class="docs-article-link{% if page.url == doc1.url %} is-active{% endif %}" href="{{ doc1.url | relative_url }}">{{ doc1.title }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ol>
+  </nav>
+</aside>

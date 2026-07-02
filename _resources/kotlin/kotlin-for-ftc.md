@@ -1,12 +1,7 @@
 ---
 title: Kotlin for FTC
-area: software
-level: beginner
-order: 10
-featured: true
 published: false
 summary: A practical first path for students learning Kotlin in the context of FTC robot code.
-tags: [kotlin, ftc-sdk, programming]
 ---
 
 Start here when you know some programming but have not written FTC robot code in Kotlin yet.

@@ -1,12 +1,7 @@
 ---
 title: Autonomous Patterns
-area: software
-level: intermediate
-order: 20
-featured: true
 published: false
 summary: How Beargineers thinks about configurable autonomous routines, field state, sensors, and time budgets.
-tags: [autonomous, kotlin, sensors]
 ---
 
 Autonomous code should express decisions clearly enough that the team can change strategy without rewriting the whole program.
