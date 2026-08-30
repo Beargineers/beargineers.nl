@@ -1,25 +1,15 @@
 ---
 title: Kotlin for FTC
-published: false
+published: true
 summary: A practical first path for students learning Kotlin in the context of FTC robot code.
 ---
 
-Start here when you know some programming but have not written FTC robot code in Kotlin yet.
+While Kotlin is not officially supported by FIRST for FTC, we believe it is still an excellent choice. Kotlin is 100% compatible with Java, and its modern language features support a faster learning path and code that is easier to reason about and more performant. This page collects learning resources, from taking your first steps with the language to programming complex mechanisms and precise autonomous logic.
 
 ## What to learn first
+Start with a [Kotlin Tour](https://kotlinlang.org/docs/kotlin-tour-welcome.html). It covers the basics of the language and does not require you to install or configure any software locally.
 
-- Kotlin variables, functions, classes, null safety, and collections.
-- How an FTC project is structured inside Android Studio.
-- The difference between `OpMode`, `LinearOpMode`, robot hardware classes, and reusable subsystem code.
-- How to read gamepad input without scattering control logic across the whole file.
-- How to use telemetry while testing mechanisms.
 
-## Beargineers angle
+Once you're comfortable with the basics, you may want to take the free Hyperskill [Introduction to Kotlin](https://hyperskill.org/courses/69-introduction-to-kotlin) course. It covers working with an IDE and provides enough practical tasks to help you become comfortable writing simple Kotlin programs.
 
-For FTC, Kotlin is most useful when it helps make robot behavior explicit. The target is not clever code; the target is software that a drive team can trust during a match and a new programmer can safely modify.
-
-## Add next
-
-- Links to the team's robot-code repository.
-- A short Kotlin style guide for Beargineers.
-- A minimal working op mode written in the team's preferred structure.
+More learning material on coroutines and FTC-specific concepts is coming.
