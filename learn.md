@@ -4,7 +4,7 @@ permalink: /learn/
 nav_title: Learn
 nav_order: 2
 layout: docs
-published: false
+published: true
 eyebrow: Knowledge base
 subtitle: Folder-based FTC documentation for programming, CAD, robot design, and manufacturing.
 ---
