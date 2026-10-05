@@ -12,4 +12,10 @@ Start with a [Kotlin Tour](https://kotlinlang.org/docs/kotlin-tour-welcome.html)
 
 Once you're comfortable with the basics, you may want to take the free Hyperskill [Introduction to Kotlin](https://hyperskill.org/courses/69-introduction-to-kotlin) course. It covers working with an IDE and provides enough practical tasks to help you become comfortable writing simple Kotlin programs.
 
+## Learn by doing
+
+Try our [Kotlin practice exercises]({{ '/learn/kotlin/kotlin-practice/' | relative_url }}): ten small challenges using team information, distance readings, driver controls, and other FTC-inspired examples. Start with variables and work towards functions, lists, and simple classes.
+
+Each exercise includes starter code, expected results, a hint, and an optional extra challenge. You can complete them in your browser without a robot or the FTC SDK.
+
 More learning material on coroutines and FTC-specific concepts is coming.
