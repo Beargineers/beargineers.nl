@@ -29,7 +29,7 @@
       <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
       <ul>
         {%- for item in nav_pages -%}
-          <li class="{% if page.url == item.url or item.url == '/learn/' and page.url contains '/learn/' %}active{% endif %}">
+          <li class="{% if page.url == item.url or item.url != '/' and page.url contains item.url %}active{% endif %}">
             <a href="{{ item.url | relative_url }}">{{ item.nav_title }}</a>
           </li>
         {%- endfor -%}

@@ -7,6 +7,7 @@ A Jekyll website for the Beargineers FIRST Tech Challenge robotics team. It comb
 This site is intended to be useful beyond a season portfolio. The current structure is:
 
 - `learn/`: curated FTC learning resources
+- `platform/`: the manual of BearPlatform, the team's Kotlin library for FTC robots
 - `projects/`: open-source software and engineering projects
 - `cad/`: reusable CAD drops and design notes
 - `blog/`: team stories, build logs, and competition notes
@@ -62,6 +63,8 @@ beargineers.nl/
 ├── _posts/              # Blog posts
 ├── _projects/           # Open-source project pages
 ├── _resources/          # Learning resource pages
+├── _platform/           # BearPlatform manual pages
+├── _data/platform_nav.yml # The BearPlatform manual's sidebar, in reading order
 ├── assets/css/          # Custom styling
 ├── assets/images/       # Pictures
 ├── assets/              # Other resources like PDFs
@@ -102,6 +105,7 @@ Common tasks:
 - **Modify styling**: Edit `assets/css/style.scss`
 - **Update homepage**: Edit `index.md`
 - **Add learning material**: Add a Markdown file in `_resources/`
+- **Add a BearPlatform manual page**: Add a Markdown file in `_platform/` and list it in `_data/platform_nav.yml`
 - **Add project page**: Add a Markdown file in `_projects/`
 - **Add CAD drop**: Add a Markdown file in `_cad/`
 - **Add blog post**: Add a dated Markdown file in `_posts/`

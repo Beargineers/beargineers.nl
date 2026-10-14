@@ -23,6 +23,9 @@ collections:
   matches:
     output: true
     permalink: /matches/:path/
+  platform:
+    output: true
+    permalink: /platform/:path/
 
 defaults:
   - scope:
@@ -35,6 +38,12 @@ defaults:
     values:
       layout: docs
       eyebrow: Learning resource
+  - scope:
+      path: ""
+      type: platform
+    values:
+      layout: docs
+      eyebrow: BearPlatform
   - scope:
       path: ""
       type: projects

@@ -1,0 +1,29 @@
+# The BearPlatform manual's sidebar, in reading order. Pages live in _platform/; `page` is the file name without .md.
+- title: Start
+  pages:
+    - getting-started
+- title: Basics
+  pages:
+    - robots
+    - opmodes
+    - robot-code-over-time
+    - gamepads
+    - settings
+- title: Hardware
+  pages:
+    - motors-and-servos
+    - sensors
+    - lights
+- title: Driving
+  pages:
+    - drivetrains
+    - localization
+    - path-following
+- title: Tools
+  pages:
+    - telemetry
+    - units-and-geometry
+    - control
+- title: Under the hood
+  pages:
+    - performance

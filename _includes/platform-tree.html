@@ -1,0 +1,28 @@
+<aside class="docs-sidebar" aria-label="BearPlatform navigation">
+  <nav class="docs-nav">
+    <a class="docs-nav-home{% if page.url == '/platform/' %} is-active{% endif %}" href="{{ '/platform/' | relative_url }}">BearPlatform</a>
+    <ol class="docs-nav-list docs-nav-root">
+      {% for group in site.data.platform_nav %}
+        {% assign current_group = false %}
+        {% for name in group.pages %}
+          {% capture group_url %}/platform/{{ name }}/{% endcapture %}
+          {% if page.url == group_url %}{% assign current_group = true %}{% endif %}
+        {% endfor %}
+        <li class="docs-folder docs-depth-0{% if current_group %} is-current{% endif %}">
+          <span class="docs-folder-link">{{ group.title }}</span>
+          <ol class="docs-nav-list">
+            {% for name in group.pages %}
+              {% capture doc_url %}/platform/{{ name }}/{% endcapture %}
+              {% assign doc = site.platform | where: "url", doc_url | first %}
+              {% if doc %}
+                <li class="docs-article docs-depth-1">
+                  <a class="docs-article-link{% if page.url == doc.url %} is-active{% endif %}" href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ol>
+        </li>
+      {% endfor %}
+    </ol>
+  </nav>
+</aside>
