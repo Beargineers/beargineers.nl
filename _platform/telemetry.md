@@ -73,7 +73,8 @@ should be at the Driver Station, ready to stop the robot.
 
 Scripts start commands too, with `POST http://192.168.43.1:8080/bear/command?name=forward%2060%20cm`, and read
 everything the graphs page shows, as JSON, from `/bear/graphs/data`: together they let a script run a drive, read what
-the robot did, change settings and try again. BearPlatform's `scripts/command.sh "forward 60 cm"` starts one.
+the robot did, change settings and try again. The Gradle task `robotCommand --name="forward 60 cm"` starts one (see
+[Gradle tasks](#gradle-tasks) below).
 
 ## Battery
 
@@ -96,13 +97,35 @@ The Control Hub serves these pages itself, so they work whenever the robot is on
 
 Over USB instead of WiFi, run `adb forward tcp:8080 tcp:8080` and use `http://localhost:8080`.
 
-## Scripts
+## Gradle tasks
 
-BearPlatform's repository has scripts for these pages, in `scripts/`. They talk to the robot on its WiFi, or over USB
-with `ROBOT=http://localhost:8080`:
+BearPlatform's Gradle plugin adds tasks for these pages to the robot's module, `TeamCode`. They are plain Gradle, so
+they work the same on Windows, macOS and Linux. In Android Studio, they are in the **Gradle** tool window, under
+**TeamCode › Tasks › robot**: double-click one to run it. In a terminal, run `./gradlew :TeamCode:sendConfig`
+(`gradlew.bat` on Windows).
 
-| Script                                  | Does                                                                      |
+| Task                                    | Does                                                                      |
 |-----------------------------------------|---------------------------------------------------------------------------|
-| `updateConfig.sh [config.properties]`   | sends a settings file to the robot; without one, the changed `config.properties` of the project |
-| `command.sh "name"`                     | starts a command; without a name, lists the ones offered now              |
-| `downloadMatchLogs.sh [folder]`         | downloads the match logs into a new folder, and deletes them from the robot |
+| `sendConfig`                            | sends `res/raw/config.properties` to the robot; `--file=other.properties` sends another file |
+| `robotCommand --name="forward 60 cm"`   | starts a command; without a name, lists the ones offered now              |
+| `downloadMatchLogs`                     | downloads the match logs into a new folder in `TeamCode/matchLogs`, and deletes them from the robot; `--into=folder` puts them elsewhere |
+
+To give a task options in Android Studio, right-click it in the Gradle tool window, choose **Modify Run
+Configuration**, and add them after the task's name.
+
+The tasks talk to the robot on its WiFi. Over USB, add `bear.robot=usb` to `gradle.properties`, or `-Pbear.robot=usb`
+to the command: they forward the robot's port with the Android SDK's `adb` first.
+
+The Quickstart comes with the plugin. Another project adds it in two places: the top-level `build.gradle`,
+
+```groovy
+plugins {
+    id 'nl.beargineers.platform' version '0.2.0' apply false
+}
+```
+
+and `TeamCode/build.gradle`, after the other `apply plugin` lines:
+
+```groovy
+apply plugin: 'nl.beargineers.platform'
+```

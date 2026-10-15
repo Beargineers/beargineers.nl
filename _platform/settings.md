@@ -117,8 +117,9 @@ Edits on the robot are lost when a new build is installed, which starts from the
 them, use the page's **Download** link and copy the file into the project.
 
 From a script, `POST http://192.168.43.1:8080/bear/config.properties` with the text as `text/plain` replaces the
-settings, and `GET` reads them. BearPlatform's `scripts/updateConfig.sh` sends a changed `config.properties` this way.
-Over USB, run `adb forward tcp:8080 tcp:8080` and use `localhost:8080` instead.
+settings, and `GET` reads them. Over USB, run `adb forward tcp:8080 tcp:8080` and use `localhost:8080` instead. The
+Gradle task `sendConfig` sends the project's `config.properties` this way, from Android Studio or a terminal (see
+[Gradle tasks]({{ '/platform/telemetry/#gradle-tasks' | relative_url }})).
 
 ## Settings of your own types
 
