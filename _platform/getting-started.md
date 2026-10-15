@@ -80,7 +80,7 @@ kotlin {
 
 dependencies {
     implementation project(':FtcRobotController')
-    implementation 'nl.beargineers.platform:ftc:0.1.0'
+    implementation 'nl.beargineers.platform:ftc:0.2.0'
 }
 ```
 
