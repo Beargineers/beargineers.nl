@@ -11,12 +11,36 @@ subtitle: A Kotlin library for programming FTC robots, made by Beargineers for s
 BearPlatform is what Beargineers program their robots with. It sits on top of FIRST's FTC SDK: the SDK talks to the
 hubs, and BearPlatform gives robot code a shape that students can read, change and reuse from one season to the next.
 
+## Robot code that reads like the plan
+
+At BearPlatform's heart are Kotlin's **coroutines**. Robot code is written as the plan it carries out, one step after
+another, and a step that takes time simply waits:
+
+```kotlin
+suspend fun MyRobot.scoreSample() {
+    follower.driveTo(SPIKE)                          // returns once the robot is there
+    claw.grab()                                      // returns once the claw holds on
+    race({ follower.driveTo(BASKET) },               // drive to the basket,
+         { delay(4.seconds) })                       // but give up after 4 seconds
+    claw.open()
+}
+```
+
+While a step waits, the robot keeps going: it reads its sensors, answers the gamepads and runs everything else that
+should happen at the same time. There are no state machines to write by hand, no action classes to wire together, and
+no threads. Ifs, loops, variables and `try`/`finally` work as everywhere in Kotlin, and starting a new action on a
+part of the robot stops the old one, which cleans up after itself.
+
+Coroutines are new to most FTC programmers, and Kotlin is less common in FTC than Java, so
+[Why coroutines]({{ '/platform/why-coroutines/' | relative_url }}) explains the idea and compares it with the state
+machines and composable actions FTC teams know.
+
+## And the rest of the robot
+
 - **A robot is made of parts.** A drivetrain, an intake, a claw: each is a small class with its own settings, and
   parts are made of parts.
 - **Settings change on the robot.** Servo positions, PID gains and field positions are declared right where the code
   uses them, and tuned live from a laptop on the robot's WiFi, without rebuilding the app.
-- **Robot code reads top to bottom.** An autonomous is a list of steps that wait for each other; button handlers and
-  every-loop work run alongside, and none of it needs threads.
 - **Real units.** Distances, angles and speeds carry their units, so `30.cm` can't be mistaken for 30 inches, and
   turning the robot never needs angle wrapping by hand.
 - **Driving comes with it.** A mecanum drive, goBILDA Pinpoint odometry, field-centric TeleOp and driving to poses on the
@@ -91,8 +115,8 @@ class Driving : CoroutineOpMode() {
 
 - **A new robot project:** [Getting started]({{ '/platform/getting-started/' | relative_url }}) sets one up from the
   [Quickstart](https://github.com/Beargineers/Quickstart), which drives a mecanum robot out of the box.
-- **The ideas everything builds on:** [Robots and parts]({{ '/platform/robots/' | relative_url }}),
-  [Opmodes]({{ '/platform/opmodes/' | relative_url }}) and
+- **The ideas everything builds on:** [Why coroutines]({{ '/platform/why-coroutines/' | relative_url }}),
+  [Robots and parts]({{ '/platform/robots/' | relative_url }}), [Opmodes]({{ '/platform/opmodes/' | relative_url }}) and
   [Robot code over time]({{ '/platform/robot-code-over-time/' | relative_url }}). Read them in that order; the other pages
   can be read as needed.
 - **New to Kotlin:** start with [Kotlin for FTC]({{ '/learn/kotlin/kotlin-for-ftc/' | relative_url }}).

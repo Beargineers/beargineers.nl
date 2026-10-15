@@ -4,6 +4,7 @@
     - getting-started
 - title: Basics
   pages:
+    - why-coroutines
     - robots
     - opmodes
     - robot-code-over-time
